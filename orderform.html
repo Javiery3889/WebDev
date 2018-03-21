@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="Javier Yong">
+        <title>Dean's Cakes &amp; Creamery&bull;Bringing your sweetest indulgence a step closer to you</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <!-- must allow javascript to run on IE -->
+        <script src="./alert.js"></script>
+        <link rel="stylesheet" href="./css/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.css"> 
+        <script src="./js/simpleCart.min.js"></script>
+        <script src="./js/jquery-3.3.1.min.js"></script>
+        
+    </head>
+    <body>
+        <header>
+            <!-- div used to contain all elements in webpage -->
+            <div class="container">
+                <h1 id="branding"><a href="index.html">Dean's Cakes &amp; Creamery</a></h1>
+                <a id="ham-icon"><i class="fas fa-bars fa-3x" aria-hidden="true"></i></a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li class = "current"><a href="#" id="cart"><i class="fa fa-shopping-cart"></i> Cart<span class="itemno">0</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- end of header -->
+
+        <section class="page-top">
+            <div class='container'>
+                <h2>Order Summary</h2>
+            </div>
+        </section>
+        <!-- section displays what user and order and a form for user to fill details such as delivery address -->
+        <section id="ordersummary">
+            <div class="container">
+                <aside id="cartsummary">
+                    <h2>Review Your Cart</h2>
+                    <div class="simpleCart_items">
+                    </div>
+                    <h3 id="subtotal">Grand Total: <span class="simpleCart_total"></span></h3>
+                </aside>
+                    <h2>Order Form</h2>
+                    <form id="orderform" action="orderformresults.html">
+                    <fieldset class="personalinfo">
+                        <legend>Contact Information</legend>
+                        <label for="firstnameinput">First Name
+                            <input type="text" name="first name" id="firstnameinput" placeholder="First name"/> 
+                        </label>
+                        <label for="lastnameinput">Last Name
+                            <input type="text" name="last name" id="lastnameinput" placeholder="Last name"/> 
+                        </label>
+                        <label for="emailinput">Email
+                            <input type="email" name="email" id="emailinput" placeholder="address@example.com"/> 
+                        </label>
+                        <label for="phoneinput">Phone
+                            <input type="tel" name="phone number" id="phoneinput" placeholder="Your phone number"/> 
+                        </label>
+                        <label for="addressinput">Address
+                            <input type="text" name="address" id="addressinput" placeholder="Address"/> 
+                        </label>
+                    </fieldset>
+                    <fieldset class="paymentmethod">
+                        <legend>Preferred contact method</legend>
+                        <label for="cash">
+                            <input type="radio" name="payment preference" id="cash" value="Cash" checked/>Cash
+                        </label>
+                        <label for="creditcard">
+                            <input type="radio" name="payment preference" id="creditcard" value="Credit Card"/>Credit Card
+                        </label>
+                        <label for="creditcardnumberinput" id="cclabel">Credit Card Number
+                                <input type="text" name="credit card number" id="creditcardnumberinput" placeholder="Please Enter Credit Card Number"/> 
+                            </label>
+                    </fieldset>
+                    <fieldset class="specialrequests">
+                        <legend>Message</legend>
+                        <label for="textbox">Special requests, or other information</label>
+                        <textarea name="special request" id="textbox" rows="6" cols="40"></textarea>
+                    </fieldset>
+                    <fieldset class="submitButton">
+                        <input type="button" id="menuback" value="Back To Menu" onclick="location.href='./menu.html'">
+                        <input type="submit" id="submit" value="Submit"/>
+                    </fieldset>
+                    </form>
+            </div>
+        </section>
+		<footer class="footer-basic-centered">
+            <p class="footer-company-motto">Where food meets passion</p>
+                        
+                <p class="footer-links">
+                 <a href="index.html">Home</a>
+                ·
+                <a href="about.html">About Us</a>
+                ·
+                <a href="menu.html">Menu</a>
+                ·
+                <a href="contact.html">Contact Us</a></p>
+
+            <p class="footer-company-name">Dean's Cakes &amp; Creamery &copy; 2017</p>
+
+        </footer>
+        <script src="./js/hamburger.js"></script>
+        <script src="./js/cartfunctions.js"></script>
+        <script src="./js/checkcreditcard.js"></script>
+    </body>
+</html>

@@ -1,0 +1,170 @@
+<!-- contact page - allows user to contact company and know about location of store -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">        
+        <meta name="author" content="Javier Yong">
+        <title>Dean's Cakes &amp; Creamery&bull;Bringing your sweetest indulgence a step closer to you</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.css"> 
+        <script src="./js/simpleCart.min.js"></script>
+        <script src="./js/jquery-3.3.1.min.js"></script>
+        <script>
+            simpleCart({
+                checkout: {
+                type: "SendForm",
+                url: "./orderform.html"
+                }
+            });
+        </script>
+    </head>
+    <!-- end of head -->
+    <body>
+        <header>
+        <!-- div used to contain all elements in webpage -->
+            <div class="container">
+                <h1 id="branding"><a href="index.html">Dean's Cakes &amp; Creamery</a></h1>
+                <a id="ham-icon"><i class="fas fa-bars fa-3x" aria-hidden="true"></i></a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li class = "current"><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#" id="cart"><i class="fa fa-shopping-cart"></i> Cart<span class="itemno">0</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            </header>
+        <!-- end of nav bar -->
+        <section id=cartlist>
+            <button id="closewindow"><span>&times;</span></button>
+            <h2>Shopping Cart</h2>
+            <p id="default">Your cart is empty</p>
+            <div class="simpleCart_items"></div>
+            <h3 id="subtotal">Total: </h3>
+            <p class="simpleCart_total"></p>
+            <a href="javascript:;" class="simpleCart_checkout">Checkout</a>
+        </section> 
+        <!-- this section contains the page title -->
+        <section class="page-top">
+            <div class='container'>
+                 <h2>Contact us</h2>
+            </div>
+        </section>
+        <!-- end of page title -->
+
+        <!-- this section contains embedded iframe for google maps of store location and more description about the company -->
+        <section id='map'>
+            <div class='container'>
+                <h2>Store Location</h2>
+                <p id='desc'>Situated at the north-west in Singapore, our physical store houses the most delectable fine foods and ingredients we are known for. Dine-in and enjoy our a wide selection of pastries.
+                    Experience our passion for food in New York SoHo style cafés in our store and indulge in ready-to-eat gourmet desserts or a cuppa. 
+                    Come find us!</p>
+                <!-- mapimg div  contains google maps location for store-->
+                <div id='mapimg'>
+                    <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDswA2ZJPxpfbM-kcmphVCRsfp9ZnhmVLk&q=7+Petir+Rd,+Singapore+678278"></iframe>
+                 </div>
+                 <!-- end of mapimg div -->
+            </div>
+        </section>
+        <!-- end of section -->
+
+        <!-- contactinfo article displays store address and operating hours -->
+        <article id='contactinfo'>
+            <div class="container">
+                <h2>Outlet information</h2>
+                <p id="Mall_Name">Hillion Mall</p>
+                <figure>
+                    <a href="http://www.hillionmall.com.sg/"><img src="./img/hillion.jpg" alt="hillion mall"></a>
+                </figure>
+               
+                <p id='location'>17 Petir Road, #01-01
+                <br>Singapore 678278
+                <br>+65 9123 4567</p>
+               
+                <p id='Op_Hours'>
+                OPERATING HOURS
+                <br>Monday to Sunday
+                <br>10am to 10pm </p>
+            </div>
+        </article>
+        <!-- end of article -->
+
+        <!-- aside element use to contain form for users to contact company -->
+        <aside id="contact">
+            <div class="container">
+                <h2>Email Us</h2>
+                <p> For customer service inquiries, please email cs@dcc.com.sg</p>
+                <p>For career inquiries and vacancies, please email hr@dcc.com</p>
+
+                <h2>Leave us a message below</h2>
+                <!-- start of contactform, user eneters thier contact info (e.g name, phone number), preferred contact method and message,
+                a submit button is used to send input to another html to display input from user -->
+                <form id="contactform" action="contactformresults.html">
+                    <fieldset class="contactinfo">
+                        <legend>Contact Information</legend>
+                        <label for="firstnameinput">First Name
+                            <input type="text" name="first name" id="firstnameinput" placeholder="First name"/> 
+                        </label>
+                        <label for="lastnameinput">Last Name
+                            <input type="text" name="last name" id="lastnameinput" placeholder="Last name"/> 
+                        </label>
+                        <label for="emailinput">Email
+                            <input type="email" name="email" id="emailinput" placeholder="address@example.com"/> 
+                        </label>
+                        <label for="phoneinput">Phone
+                            <input type="tel" name="phone number" id="phoneinput" placeholder="Your phone number"/> 
+                        </label>
+                    </fieldset>
+                    <fieldset class="contactmethod">
+                        <legend>Preferred contact method</legend>
+                        <label for="email">
+                            <input type="radio" name="contact preference" id="email" value="Email" checked/>Email
+                        </label>
+                        <label for="phone">
+                            <input type="radio" name="contact preference" id="phone" value="Phone"/>Phone
+                        </label>
+                        <label for="either">
+                            <input type="radio" name="contact preference" id="either" value="Either"/>Either
+                        </label>
+                    </fieldset>
+                    <fieldset class="message">
+                        <legend>Message</legend>
+                        <label for="feedback">Feedback, special requests, or other information</label>
+                        <textarea name="feedback" id="feedback" rows="6" cols="40"></textarea>
+                    </fieldset>
+                    <fieldset class="submitButton">
+                        <input type="submit" id="submit" value="Submit"/>
+                    </fieldset>
+                </form>
+            </div>
+        </aside>
+        <!-- end of aside -->
+    
+
+    
+		<footer class="footer-basic-centered">
+                
+            <p class="footer-company-motto">Where food meets passion</p>
+                
+            <p class="footer-links">
+            <a href="index.html">Home</a>
+            ·
+            <a href="about.html">About Us</a>
+            ·
+            <a href="menu.html">Menu</a>
+            ·
+            <a href="contact.html">Contact Us</a></p>
+                
+            <p class="footer-company-name">Dean's Cakes &amp; Creamery &copy; 2017</p>
+                
+        </footer>
+        <script src="./js/hamburger.js"></script>
+        <script src="./js/cartfunctions.js"></script>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<!-- Important - allow javascript to run on Internet Explorer -->
+<!--index/home page-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale = 1">
+        <meta name="author" content="Javier Yong">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dean's Cakes &amp; Creamery&bull;Bringing your sweetest indulgence a step closer to you</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.css"> 
+        <link rel="stylesheet" href="./css/jquery.bxslider.css">
+        <script src="./js/simpleCart.min.js"></script>
+        <script src="./js/jquery-3.3.1.min.js"></script>
+        <script src="./js/jquery.bxslider.min.js"></script>
+        <script src="./js/slider.js"></script>
+        <script>
+            simpleCart({
+                checkout: {
+                type: "SendForm",
+                url: "./orderform.html"
+                }
+            });
+        </script>
+    </head>
+
+    <body>
+        <!-- Navigation bar and logo implemented in header -->
+        <header>
+        <!-- div used to contain all elements in webpage -->
+            <div class="container">
+                <h1 id="branding"><a href="index.html">Dean's Cakes &amp; Creamery</a></h1>
+                <a id="ham-icon"><i class="fas fa-bars fa-3x" aria-hidden="true"></i></a>
+                <nav>
+                    <ul>
+                        <li class = "current"><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#" id="cart"><i class="fa fa-shopping-cart"></i>Cart<span class="itemno">0</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- background image with parallex effect for home page -->
+        <section id=cartlist>
+                <button id="closewindow"><span>&times;</span></button>
+                <h2>Shopping Cart</h2>
+                <p id="default">Your cart is empty</p>
+                <div class="simpleCart_items"></div>
+                <h3 id="subtotal">Total: </h3>
+                <p class="simpleCart_total"></p>
+                <a href="javascript:;" class="simpleCart_checkout">Checkout</a>
+            </section> 
+
+        <section id = 'movingimg'>
+            <h3>Where food meets passion</h3>
+        </section>
+        <!-- end of movingimg --> 
+
+        <!-- Section containing JQuery slideshow to show more info about company, three slides used-->
+        <section id = 'showcase'>
+                <div class = "slider">
+                    <div id = "img1">
+                        <img src="./img/backgrnd.jpeg" alt="Welcome to Dean's Cakes &amp; Creamery">
+                        <div id = "img1-text">
+                            <h2>Welcome to Dean's Cakes &amp; Creamery</h2>
+                            <p>Over its history, DEAN's CAKES &amp; CREAMERY has earned a reptutation for its revolution in the dessert industry. Known as a core of new dessert trends, DEAN'S CAKES &amp; CREAMERY strives to provide gourmet perfection to both customers and those in the industry making it an ongoing aim to establish ourselves as a premium brand throughout Singapore.</p>
+                        </div>
+                    </div>
+                    <div id = "img2">
+                        <img src="./img/img12.jpeg" alt="">
+                        <div id = "img2-text">
+                            <h2>Spruce Up Your Party With One of Our Crafted Cakes.<br><a href="menu.html" id="ordernow">Order Now</a></h2>
+                        </div>
+                    </div>
+                    <div id = "img3">
+                        <img src="./img/img13.jpeg" alt="">
+                        <div id = "img3-text">
+                            <h2>Wholesome ingredients with upmost perfection</h2>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- end of showcase section -->
+        
+        <!-- allow user to enter email for newsletter subcription -->
+        <section class="newsletter">
+            <div class="container">
+                <h2>Sign Up For Our Newsletter</h2>
+                <form class="newsform" action="#">
+                    <fieldset>
+                        <input type="email" id="email" placeholder="Your Email Address">
+                        <input type="submit" class="news_button" value="Submit" onclick="clickAlert()">
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+
+        <!-- end of newsletter section -->
+        
+        <footer class="footer-basic-centered">
+            
+            <p class="footer-company-motto">Where food meets passion</p>
+
+            <p class="footer-links">
+                <a href="index.html">Home</a>
+                ·
+                <a href="about.html">About Us</a>
+                ·
+                <a href="menu.html">Menu</a>
+                ·
+                <a href="contact.html">Contact Us</a></p>
+        
+            <p class="footer-company-name">Dean's Cakes &amp; Creamery &copy; 2017</p>
+
+        </footer>
+        <script src="./js/hamburger.js"></script>
+        <script src="./js/slider.js"></script>
+        <script src="./js/cartfunctions.js"></script>
+        
+        <!-- this script is used when a user clicks the submit button after typing email address for newsletter -->
+        <script>
+            function clickAlert(){
+                var email = document.getElementById("email");
+                alert("We will send a confirmation email to "+ email.value + ".");
+            }
+        </script>
+        <!-- end of footer -->
+    </body>
+</html>

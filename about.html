@@ -1,0 +1,143 @@
+<!-- About page - for more details about the company and products -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Javier Yong">
+        <title>Dean's Cakes &amp; Creamery&bull;Bringing your sweetest indulgence a step closer to you</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.css"> 
+        <script src="./js/simpleCart.min.js"></script>
+        <script src="./js/jquery-3.3.1.min.js"></script>
+        <script>
+            simpleCart({
+                checkout: {
+                type: "SendForm",
+                url: "./orderform.html"
+                }
+            });
+        </script>
+    </head>
+    <!-- end of head -->
+    <body>
+        <header>
+        <!-- div used to contain all elements in webpage -->
+            <div class="container">
+                <h1 id="branding"><a href="index.html">Dean's Cakes &amp; Creamery</a></h1>
+                <a id="ham-icon"><i class="fas fa-bars fa-3x" aria-hidden="true"></i></a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class = "current"><a href="about.html">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#" id="cart"><i class="fa fa-shopping-cart"></i> Cart<span class="itemno">0</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section id=cartlist>
+                <button id="closewindow"><span>&times;</span></button>
+                <h2>Shopping Cart</h2>
+                <p id="default">Your cart is empty</p>
+                <div class="simpleCart_items"></div>
+                <h3 id="subtotal">Total: </h3>
+                <p class="simpleCart_total"></p>
+                <a href="javascript:;" class="simpleCart_checkout">Checkout</a>
+        </section> 
+
+        <!-- this section is for the the title of the webpage -->
+        <section class="page-top">
+            <div class='container'>
+                <h2>About us</h2>
+            </div>
+        </section>
+
+        <!-- end of page-top -->
+    
+        <!-- section includes company history-->
+        <section id="about-main">
+            <div class="container">
+                <h3>Ensuring the highest quality.</h3>
+                <figure id="histimg">
+                    <img src="./img/abtimg1.jpg" alt="We use quality ingredients">
+                    <figcaption>We use superfine flour imported from Japan, which produces cakes unlike any other.</figcaption>
+                </figure>
+                <article id="history">
+                     <h2>Our Story</h2>
+                     <p>Dean's Cakes &amp; Creamery is a friendly neighborhood dessert place: casual, farm-to-table, community-focused. 
+                        Excellent for people to gather for hand-made cakes, no nonsense good ice cream after a hearty meal.</p>  
+            
+                    <p>At Dean's Cakes &amp; Creamery, we offer sweet and savoury cakes artfully crafted to be visual and gastronomic 
+                        delights as well as an international cuisine that will take customers around the world with a menu that is 
+                        constantly refreshed every few months.</p>
+
+                     <p>As a new bakery, we hope to stand out from the rest, by working persistently to curate a food-forward assortment of the best and newest food products from around the globe.
+                        Dean's Cakes &amp; Creamery is to cover, introduce and support products that meet our and your uncompromising standards.</p>
+
+                     <p>Gourmet enthusiasts in Singapore can now excite their senses with an international array of artisanal products at Hillion Mall today,
+                        See you there!</p>
+                </article>
+             </div>       
+        </section>
+        <!-- end of section -->
+
+        <!-- section contains description about the products in the company -->
+        <section id="products">
+            <div class="container">
+                <h3>Baked with love and passion!</h3>
+                <figure id="prodimg">
+                    <img src="./img/abtimg2.jpg" alt="Blueberry muffins">
+                    <figcaption>Our new blueberry muffins. We use the freshest ingredients and our upmost efforts!</figcaption>
+                </figure>
+                <article id="aboutproducts">
+                <h2>Our Products</h2>
+                <p>We use the freshest ingredients for our products because we are devoted to the highest standards. Our cakes starts with real cream and milk, which we then blend with carefully selected ingredients, 
+                to create a cake with a unique velvety texture and unforgettable taste.</p>
+                
+                <p>Our signature sweet and savoury creations are made under the watchful eye of our head chef, will certainly satisfy even the most discerning food connoisseurs while going easy 
+                on the wallet.</p> 
+                </article>
+            </div>
+        </section>
+
+        <!-- end of section -->
+
+         <!-- allow user to enter email for newsletter subcription -->
+         <section class="newsletter">
+                <div class="container">
+                    <h2>Sign Up For Our Newsletter</h2>
+                    <form class="newsform" action="#">
+                        <fieldset>
+                            <input type="email" id="email" placeholder="Your Email Address">
+                            <input type="submit" class="news_button" value="Submit" onclick="clickAlert()">
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+    
+        <!-- end of newsletter section -->
+        
+        <footer class="footer-basic-centered">
+            <p class="footer-company-motto">Where food meets passion</p>
+                        
+            <p class="footer-links">
+            <a href="index.html">Home</a>
+                                        ·
+            <a href="about.html">About Us</a>
+                                        ·
+            <a href="menu.html">Menu</a>
+                                        ·
+            <a href="contact.html">Contact Us</a></p>            
+            <p class="footer-company-name">Dean's Cakes &amp; Creamery &copy; 2017</p>
+                        
+            </footer>
+            <script src="./js/hamburger.js"></script>
+            <script src="./js/cartfunctions.js"></script>
+    </body>
+</html>

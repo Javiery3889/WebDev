@@ -1,0 +1,78 @@
+<!-- display user data from contact.html form -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width">
+        <meta name="author" content="Javier Yong">
+        <title>Dean's Cakes &amp; Creamery&bull;Bringing your sweetest indulgence a step closer to you</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <!-- must allow javascript to run on IE -->
+        <script src="./alert.js"></script>
+        <link rel="stylesheet" href="./css/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.css"> 
+        <script src="./js/simpleCart.min.js"></script>
+        <script src="./js/jquery-3.3.1.min.js"></script>
+        <script>
+            simpleCart({
+                checkout: {
+                type: "SendForm",
+                url: "./orderform.html"
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <!-- div used to contain all elements in webpage -->
+            <div class="container">
+                <h1 id="branding"><a href="index.html">Dean's Cakes &amp; Creamery</a></h1>
+                <a id="ham-icon"><i class="fas fa-bars fa-3x" aria-hidden="true"></i></a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li class = "current"><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#" id="cart"><i class="fa fa-shopping-cart"></i> Cart<span class="itemno">0</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- end of header -->
+
+        <!-- article to display user data from contact.html form -->
+         <article id="contentstart">
+            <div class="container">
+               <h2>Your form has been submitted</h2>
+               <h3>You entered the following data:</h3>
+         
+               <script src="./js/getuserdata.js"></script>
+               <!-- button for user to go back to home page after confirmation of form -->
+               <form id="linkhome" action="./index.html" method="get">
+                <button id="backbutton">Back To Home Page</button>
+              </form>
+            </div>
+         </article>
+
+		<footer class="footer-basic-centered">
+            <p class="footer-company-motto">Where food meets passion</p>
+                        
+                <p class="footer-links">
+                 <a href="index.html">Home</a>
+                ·
+                <a href="about.html">About Us</a>
+                ·
+                <a href="menu.html">Menu</a>
+                ·
+                <a href="contact.html">Contact Us</a></p>
+
+            <p class="footer-company-name">Dean's Cakes &amp; Creamery &copy; 2017</p>
+
+        </footer>
+        <script src="./js/hamburger.js"></script>
+        <script src="./js/cartfunctions.js"></script>
+</body>
+</html>

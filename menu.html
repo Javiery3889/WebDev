@@ -1,0 +1,195 @@
+<!-- IMPORTANT, for Internet Explorer browser, users need to add file://127.0.0.1 to the trusted zones under the security tab 
+this is because the website is not hosted on a server (https://stackoverflow.com/questions/3392032/localstorage-object-is-undefined-in-ie)
+This can be done by going 
+1. to the Settings in IE browser at the top-right corner
+2. click internet options
+3. click security tab
+4. click sites
+5. type  file://127.0.0.1 under "Add this website to the zone"
+6. uncheck Require server verification (https:) for all sites..
+7. click add -->
+<!-- Menu page to display various desserts offered by the store and allow customer to order online as well(semester 2)-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width">
+        <meta name="author" content="Javier Yong">
+        <title>Dean's Cakes &amp; Creamery&bull;Bringing your sweetest indulgence a step closer to you</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.css"> 
+        <!-- must allow javascript to run on IE -->
+        <script src="./js/jquery-3.3.1.min.js"></script>
+        <script src="./js/simpleCart.js"></script>
+        
+        <script>
+            simpleCart({
+                checkout: {
+                type: "SendForm",
+                method: "GET",
+                url: "orderform.html"
+                }
+            });
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <!-- div used to contain all elements in webpage -->
+            <div class="container">
+                <h1 id="branding"><a href="index.html">Dean's Cakes &amp; Creamery</a></h1>
+                <a id="ham-icon"><i class="fas fa-bars fa-3x" aria-hidden="true"></i></a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class = "current"><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#" id="cart"><i class="fa fa-shopping-cart"></i> Cart<span class="itemno">0</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- end of header -->
+
+        <!-- section to allow users to display and close cart content -->
+        <section id=cartlist>
+            <button id="closewindow"><span>&times;</span></button>
+            <h2>Shopping Cart</h2>
+            <p id="default">Your cart is empty</p>
+            <div class="simpleCart_items"></div>
+            <h3 id="subtotal">Total: </h3>
+            <p class="simpleCart_total"></p>
+            <a href="javascript:;" class="simpleCart_checkout">Checkout</a>
+        </section>
+        <!-- page-top section contains page title-->
+        <section class="page-top">
+                <div class='container'>
+                    <h2>Our Menu</h2>
+                </div>
+        </section>
+            
+
+        <!-- idv-cakes represent individual cakes as a section element -->
+        <section id = 'idv-cakes'>
+            <div class= 'container'>
+                    <h2>Cakes for one person</h2>
+                    
+                <!--Each line of the webpage has two items, which are represented by sections col and col2  -->
+                <section class ='col'>
+                    <!-- product image given a figure element -->
+                    <figure>
+                        <img src="./img/img6.jpeg" alt="chocolate cake">
+                    </figure>
+                    <!-- title of product -->
+                    <h3>Chocolate cake <br>($6.50)</h3>
+                    <!-- description of product -->
+                    <p>Alternating layers of dark chocolate sponge cake, and crushed walnuts folded into a velvety chocolate mousse.</p>
+                    <!--quantity display for user to select quantity of products that he/she wants to order -->
+                    
+                    <form class='myform' method='POST'>
+                        <fieldset>
+                            <input type='button' value="Add To Cart" class="submitButton" onclick="simpleCart.add({name:'Chocolate Cake ($6.50)', price: 6.50})">
+                            
+                        </fieldset>
+
+                </form>
+                
+                </section>
+               <!-- end of col section -->
+                 
+                <section class ='col2'>
+                    <figure>
+                        <img src="./img/img1_test.jpeg" alt="Vanilla &amp; Lychee Cake">
+                    </figure>
+                    <h3>Vanilla &amp; Lychee Cake <br>($6.50)</h3>
+                    <p> This Classic Vanilla Cake pairs fluffy vanilla cake layers with a silky vanilla buttercream, top with a sweet lychee.</p>
+                    <form class='myform' method='POST'>
+                    <fieldset>
+                        <input type='button' value="Add To Cart" class="submitButton" onclick="simpleCart.add({name:'Vanilla &amp; Lychee Cake ($6.50)', price: 6.50})">
+                    </fieldset>
+                    </form>
+                </section>
+                <!-- end of col2 section -->
+
+                <section class="col">
+                    <figure>
+                        <img src="./img/img2_1600x1600.jpeg" alt="Signature Caramel">
+                    </figure>
+                    <h3>Signature Caramel <br>($6.00)</h3>
+                    <p>A sponge cake infused with our signature caramel cream and garnished with a scoop of our handmade ice-cream.</p>
+                    <form class='myform' method='POST' action='#'>
+                        <input type='button' value="Add To Cart" class="submitButton" onclick="simpleCart.add({name:'Signature Caramel ($6.00)', price: 6.00})">
+                    </form>
+                </section>
+
+                <section class="col2">
+                    <figure>
+                        <img src="./img/img8_test.jpeg" alt="Lava Cake">
+                    </figure>
+                    <h3>Chocolate Lava Cake <br>($6.00)</h3>
+                    <p>One of our more popular desserts, combining a soft chocolate sponge cake with a warm melted chocolate center.</p>
+                    <form class='myform' method='POST' action='#'>
+                        <input type='button' value="Add To Cart" class="submitButton" onclick="simpleCart.add({name:'Chocolate Lava Cake ($6.00)', price: 6.00})">
+                    </form>
+                </section>
+            </div>
+        </section>
+        <!-- end of section of individual cakes -->
+
+        <!-- another section element given to whole cakes -->
+        <section id="whole-cakes">
+            <div class="container">
+                <h2>Whole Cakes</h2>
+                <!--Each line of the webpage has two items, which are represented by sections col and col2  -->
+                <section class ='col'>
+                    <figure>
+                        <img src="./img/cheesecake_1600x1600.jpeg" alt="cheesecake">
+                    </figure>
+                    <h3>Cheesecake <br>(1.5kg, $25.00)</h3>
+                    <p>A masterpiece in chocolate, alternating layers of dark chocolate sponge cake, and crushed walnuts folded into a velvety chocolate mousse.</p>
+                    <form class='myform' method='POST' action='#'>
+                        <input type='button' value="Add To Cart" class="submitButton" onclick="simpleCart.add({name:'Cheesecake ($25.00)', price: 25.00})">       
+                    </form>
+                </section>
+
+                <section class="col2">
+                    <figure>
+                        <img src="./img/creamcake.jpeg" alt="creamcake">
+                    </figure>
+                    <h3>Strawberry Infusion <br>(1.0kg, $20.00)</h3>
+                    <p>A must-try dessert for any occasion. Our version is created our handmade strawberry purée, giving it a refreshing yet unique taste.</p>
+                    <form class='myform' method='POST' action='#'>
+                        <input type='button' value="Add To Cart" class="submitButton" onclick="simpleCart.add({name:'Strawberry Shortcake ($20.00)', price: 20.00})">
+                    </form>
+                </section>
+            </div>
+        </section>
+        
+		<footer class="footer-basic-centered">
+            <p class="footer-company-motto">Where food meets passion</p>
+                        
+                <p class="footer-links">
+                 <a href="index.html">Home</a>
+                ·
+                <a href="about.html">About Us</a>
+                ·
+                <a href="menu.html">Menu</a>
+                ·
+                <a href="contact.html">Contact Us</a></p>
+
+            <p class="footer-company-name">Dean's Cakes &amp; Creamery &copy; 2017</p>
+
+        </footer>
+        <script src="./js/hamburger.js"></script>
+        <script src="./js/cartfunctions.js"></script>
+
+        
+
+                
+    </body>
+</html>

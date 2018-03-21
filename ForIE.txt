@@ -1,0 +1,10 @@
+<!-- IMPORTANT, for Internet Explorer browser, users need to add file://127.0.0.1 to the trusted zones under the security tab 
+this is because the website is not hosted on a server (https://stackoverflow.com/questions/3392032/localstorage-object-is-undefined-in-ie)
+This can be done by going 
+1. to the Settings in IE browser at the top-right corner
+2. click internet options
+3. click security tab
+4. click sites
+5. type  file://127.0.0.1 under "Add this website to the zone"
+6. uncheck Require server verification (https:) for all sites..
+7. click add -->
