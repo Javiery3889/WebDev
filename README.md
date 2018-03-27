@@ -4,3 +4,9 @@ Business website template for a fictitious bakery company, uses JQuery and Javas
 * Basic Functions include:
   * Display information of company (e.g location of restaurant, about the company and contact information)
   * Uses the functions of forms (contact form and order form for users to reach out to the company, and order from the company respectively)
+
+All images are stock free and are taken from https://www.pexels.com
+
+* JQuery libraries used:
+ * https://bxslider.com
+ * http://simplecartjs.org/
